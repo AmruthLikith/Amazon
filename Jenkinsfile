@@ -3,14 +3,15 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'amazon-app'
-        ACR_NAME = 'dockeranup.azurecr.io'
-        ACR_IMAGE = 'dockeranup.azurecr.io/amazon-app:latest'
+        ACR_NAME = 'mydckr.azurecr.io'
+        ACR_IMAGE = 'mydckr.azurecr.io/amazon-app:latest'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'your-git-creds-id', url: 'https://github.com/dev-anupsa/Amazon.git'
+               # git credentialsId: 'your-git-creds-id', url: 'https://github.com/dev-anupsa/Amazon.git'
+                git branch: 'master', url: 'https://github.com/AmruthLikith/Amazon.git'
             }
         }
 
